@@ -22,19 +22,7 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
 		ExceptionResponse exceptionResponse = new ExceptionResponse("ERRORCODE01", "SESSION_EXPIRED",
 				"Session got expired please retry with fresh token");		
 		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
-	}
-
-	
-	@ExceptionHandler(ResourceNotFoundException.class)
-	@ResponseBody
-	public ResponseEntity<Object> handleResourceNotFound(final ResourceNotFoundException exception,
-			final HttpServletRequest request) {
-
-		ExceptionResponse exceptionResponse = new ExceptionResponse("ERRORCODE41", "RESOURCE_NOT_FOUND",
-				request.getRequestURI());
-		return new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
-	}
-	
+	}	
 	
 	@ExceptionHandler(Exception.class)
 	@ResponseBody
