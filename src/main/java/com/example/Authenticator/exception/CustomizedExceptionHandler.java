@@ -20,8 +20,7 @@ public class CustomizedExceptionHandler extends ResponseEntityExceptionHandler {
 	public final ResponseEntity<Object> handleSessionExpiredException(SessionExpiredException ex, WebRequest request) {
 
 		ExceptionResponse exceptionResponse = new ExceptionResponse("ERRORCODE01", "SESSION_EXPIRED",
-				"Session got expired please retry with fresh token");
-		// returning exception structure and Not Found status
+				"Session got expired please retry with fresh token");		
 		return new ResponseEntity(exceptionResponse, HttpStatus.BAD_REQUEST);
 	}
 
